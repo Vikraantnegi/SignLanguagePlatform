@@ -1,0 +1,66 @@
+body {
+    background: #E5E5E5;
+    color: #333333;
+    margin-top: 5rem;
+    padding: 60px;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #444444;
+}
+.fixed-top{
+    top: 5%;
+}
+.site-header .navbar-nav .nav-link.active {
+    font-weight: 700;
+}
+.mr-auto{
+    margin-right: auto;
+}
+.header__link{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+}
+.header__logo{
+    color: #51C9FF;
+    font-size: 30px;
+}
+.header__name{
+    color: #010D82;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+.header_normal{    
+    color: #010D82;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+.header_Register{
+    background-color: #010D82;
+    color: white;
+    border-radius: 4px;
+    padding: 8px 16px !important;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+.navbar-nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+.mr-40{
+    margin-right: 40px;
+}
+.mr-10{
+    margin-right: 10px;
+}.mr-20{
+    margin-right: 20px;
+}.mr-30{
+    margin-right: 30px;
+}
+.ml-auto{
+    margin-left: auto
+}
