@@ -140,3 +140,13 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 16px;
     color: #010D82;
 }
+.techStack{
+    align-items: center;
+    gap: 40px;
+    margin: 0 auto;
+}
+.techIcon{
+    color: #010D82;
+    font-size: 100px;
+    opacity: 0.5
+}
