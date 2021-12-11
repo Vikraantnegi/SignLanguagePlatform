@@ -1,14 +1,9 @@
 body {
     background: #E5E5E5;
-    color: #333333;
-    margin-top: 5rem;
-    padding: 60px;
+    margin-top: 3rem;
 }
 h1, h2, h3, h4, h5, h6 {
     color: #444444;
-}
-.fixed-top{
-    top: 5%;
 }
 .site-header .navbar-nav .nav-link.active {
     font-weight: 700;
@@ -63,4 +58,85 @@ h1, h2, h3, h4, h5, h6 {
 }
 .ml-auto{
     margin-left: auto
+}
+.flexColumn{
+    display: flex;
+    flex-direction: column;
+}
+.flexRow{
+    display: flex;
+    flex-direction: row;
+}
+.landingPage{
+    padding: 80px 0;
+    gap: 60px;
+}
+.landingPage__intro{
+    gap: 40px;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 40px;
+}
+.landingPage__introContent{
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.landingPage__introText1{
+    color: #51C9FF;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+.landingPage__introMainText{
+    color: #010D82;
+    font-size: 42px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    line-height: 60px;
+}
+.landingPage__introSubText{
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: #84879E;
+}
+.grow5, .grow1, .grow2 { transition: all .2s ease-in-out; }
+.grow1:hover { transform: scale(1.1); }
+.grow2:hover { transform: scale(1.2); }
+.grow5:hover { transform: scale(1.05); }
+.nav-link:hover {
+    color: #010D82;
+    font-weight: bold;
+}
+.header_Register:hover{
+    color: white !important;
+}
+.pointer{
+    cursor: pointer;
+}
+.landingPage__introCTA{
+    margin-top: 20px;
+    gap: 80px;
+    align-items: center;
+}
+.gSCTA{
+    border-radius: 12px;
+    padding: 12px 28px !important;
+}
+.wDCTA{
+    gap: 8px;
+    align-items: center;
+    border-radius: 12px;
+    padding: 12px !important;
+    border: 1px solid #010D82;
+}
+.wDCTA__img{
+    color: #010D82;
+    font-size: 20px;
+}
+.wDCTA__text{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #010D82;
 }
