@@ -134,7 +134,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 20px;
 }
 .wDCTA__text{
-    font-family: Poppins;
+    font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -149,4 +149,23 @@ h1, h2, h3, h4, h5, h6 {
     color: #51C9FF;
     font-size: 100px;
     opacity: 0.5
+}
+.landingPage__start{
+    gap: 10px;
+    padding: 40px 0;
+}
+.landingPage__startSub{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #51C9FF;
+}
+.landingPage__startTitle{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+    color: #010D82;
+}
+.landingPage__startContainer{
+    justify-content: space-between;
 }
