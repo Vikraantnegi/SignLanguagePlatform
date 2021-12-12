@@ -223,3 +223,57 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 14px;
     color: #84879E;
 }
+.landingPage__about{
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+.landingPage__aboutContent{
+    gap: 20px;
+}
+.landingPage__aboutImage{
+    width: 50%;
+    margin-right: -8%;
+}
+.aboutTop{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #51C9FF;
+}
+.aboutHead{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+    color: #010D82;
+    margin-top: -5px;
+}
+.aboutContent{
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: #84879E;
+    width: 80%;
+}
+.landingPage__contact{
+    gap: 20px;
+}
+.contactTop{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #51C9FF;
+    text-align: center;
+}
+.contactHead{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+    text-align: center;
+    color: #010D82;
+}
+.contactMainContainer{
+    background: #51C9FF;
+    padding: 100px 0px;
+    justify-content: center;
+    align-items: center;
+}
