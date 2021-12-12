@@ -1,13 +1,15 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, flash, redirect, request
 from forms import RegistrationForm, LoginForm, ContactForm
 
 app = Flask(__name__)
+app.config["SECRET_KEY"] = "946dafe6e87006141e819258961642b9"
 
-app.config['SECRET_KEY'] = '946dafe6e87006141e819258961642b9'
-
-@app.route("/")
+@app.route("/", methods=['GET','POST'])
 def home():
-    form = ContactForm()
+    form = ContactForm(request.form)    
+    if form.validate_on_submit():
+        flash('Contact Succesfull', 'success')
+        return redirect(url_for('home'))     
     return render_template('home.html', form=form)
 
 @app.route("/register")

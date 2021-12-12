@@ -35,9 +35,23 @@
                     </div>
                 </div>
             </nav>
+        
         </header>
+        <!-- Flash Messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} alertHere">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <!-- Flash Messages End -->
+
         {% block content %}
         {% endblock %}
+        
         <footer class="site-footer">
             <div class="container">
                 © 2021 WLASL Container

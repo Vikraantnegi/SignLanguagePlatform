@@ -108,26 +108,71 @@
                     <div class="flexRow g60">
                         <div class="flexColumn form-group formGroup">
                             {{ form.name.label(class="form-control-label formGroupLabel") }}
-                            {{ form.name(class="form-control form-control-lg formGroupInput") }}
+                            {% if form.name.errors %}
+                                {{ form.name(class="form-control form-control-lg formGroupInput is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.name.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.name(class="form-control form-control-lg formGroupInput") }}
+                            {% endif %}
                         </div>
                         <div class="flexColumn form-group formGroup">
                             {{ form.email.label(class="form-control-label formGroupLabel") }}
-                            {{ form.email(class="form-control form-control-lg formGroupInput") }}
+                            {% if form.email.errors %}
+                                {{ form.email(class="form-control form-control-lg formGroupInput is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.email.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.email(class="form-control form-control-lg formGroupInput") }}
+                            {% endif %}
                         </div>
                     </div>
                     <div class="flexRow g60">
                         <div class="flexColumn form-group formGroup">
                             {{ form.phone.label(class="form-control-label formGroupLabel") }}
-                            {{ form.phone(class="form-control form-control-lg formGroupInput") }}
+                            {% if form.phone.errors %}
+                                {{ form.phone(class="form-control form-control-lg formGroupInput is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.phone.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.phone(class="form-control form-control-lg formGroupInput") }}
+                            {% endif %}
                         </div>
                         <div class="flexColumn form-group formGroup">
                             {{ form.extra.label(class="form-control-label formGroupLabel") }}
-                            {{ form.extra(class="form-control form-control-lg formGroupInput") }}
+                            {% if form.extra.errors %}
+                                {{ form.extra(class="form-control form-control-lg formGroupInput is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.extra.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.extra(class="form-control form-control-lg formGroupInput") }}
+                            {% endif %}
                         </div>
                     </div>
                     <div class="flexColumn form-group formGroupTextArea">
                         {{ form.message.label(class="form-control-label formGroupLabel") }}
-                        {{ form.message(class="form-control form-control-lg formGroupInput") }}
+                        {% if form.message.errors %}
+                            {{ form.message(class="form-control form-control-lg formGroupInput is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.message.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.message(class="form-control form-control-lg formGroupInput") }}
+                        {% endif %}
                     </div>
                     <div class="submitButton flexRow">
                         {{ form.submit(class="btn submitButtonForm grow1") }}

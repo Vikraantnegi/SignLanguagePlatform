@@ -342,3 +342,9 @@ h1, h2, h3, h4, h5, h6 {
     color: #010D82;
     margin-left: -16px;
 }
+.alertHere{
+    text-align: center;    
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+}
