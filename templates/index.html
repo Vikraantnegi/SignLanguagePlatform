@@ -67,8 +67,51 @@
                 <span class="landingPage__startTitle">How to get started?</span>
                 <div class="landingPage__startContainer flexRow">
                     <img src="{{ url_for('static', filename='start.png') }}" class="landingPage__startImage" alt="Start Image" />
-                    <div class="row landingPage__startContent">
-
+                    <div class="landingPage__startContent g60 flexColumn">
+                        <div class="flexRow g60">
+                            <div class="stepCard flexColumn">
+                                <div class="stepCard__number flexRow">
+                                    01
+                                </div>
+                                <div class="stepCard__icon flexRow">
+                                    <i class="fas fa-user-plus stepCardIcon"></i>
+                                </div>
+                                <span class="stepCard__head">Create an account</span>
+                                <span class="stepCard__content">You need to create an account. You can do this by clicking on the Sign up button above.</span>
+                            </div>
+                            <div class="stepCard flexColumn">
+                                <div class="stepCard__number flexRow">
+                                    02
+                                </div>
+                                <div class="stepCard__icon flexRow">
+                                    <span class="iconify stepCardIcon2" data-icon="ci:checkbox-checked"></span>
+                                </div>
+                                <span class="stepCard__head">Choose a theme</span>
+                                <span class="stepCard__content">There are two ways you can proceed, either upload video, or record.</span>
+                            </div>
+                        </div>
+                        <div class="flexRow g60">
+                            <div class="stepCard flexColumn">
+                                <div class="stepCard__number flexRow">
+                                    03
+                                </div>
+                                <div class="stepCard__icon flexRow">
+                                    <i class="fas fa-film stepCardIcon"></i>
+                                </div>
+                                <span class="stepCard__head">Upload Video</span>
+                                <span class="stepCard__content">You will have to give us access, and then you have to upload/record the video.</span>
+                            </div>
+                            <div class="stepCard flexColumn">
+                                <div class="stepCard__number flexRow">
+                                    04
+                                </div>
+                                <div class="stepCard__icon flexRow">
+                                    <i class="fas fa-poll stepCardIcon2"></i>
+                                </div>
+                                <span class="stepCard__head">Final Result</span>
+                                <span class="stepCard__content">You will receive the subtitles, along with a generated audio which will speak for you.</span>
+                            </div>
+                        </div>
                     </div> 
                 </div>
             </div>
