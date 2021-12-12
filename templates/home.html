@@ -1,0 +1,112 @@
+{% extends "index.html" %}
+{% block content %}        
+    <main role="main" class="container landingPage flexColumn">
+        <div class="landingPage__intro flexRow">
+            <div class="landingPage__introContent flexColumn">
+                <span class="landingPage__introText1">Stand out of the crowd!</span>
+                <span class="landingPage__introMainText">Convert your Signs into Subtitles</span>
+                <span class="landingPage__introSubText">Let others know what you want to say easily. <br />Be audible to others!</span>
+                <div class="landingPage__introCTA flexRow">
+                    <div class="header_Register gSCTA grow1 pointer">
+                        Get Started
+                    </div>
+                    <div class="wDCTA grow1 pointer flexRow">
+                        <i class="far fa-play-circle wDCTA__img"></i>
+                        <span class="wDCTA__text">Watch Demo</span>
+                    </div>
+                </div>
+            </div>
+            <img src="{{ url_for('static', filename='Intro.png') }}" class="landingPage__introImage" alt="Intro Image" />
+        </div>
+        <div class="flexRow techStack">
+            <i class="fab fa-python techIcon"></i>
+            <span class="iconify techIcon" data-icon="cib:tensorflow"></span>
+            <span class="iconify techIcon" data-icon="bx:bxl-flask"></span>
+            <i class="fab fa-html5 techIcon"></i>
+            <i class="fab fa-css3 techIcon"></i>
+            <i class="fab fa-bootstrap techIcon"></i>
+        </div>
+        <div class="landingPage__start flexColumn">
+            <span class="landingPage__startSub">Simple steps to being audible</span>
+            <span class="landingPage__startTitle">How to get started?</span>
+            <div class="landingPage__startContainer flexRow">
+                <img src="{{ url_for('static', filename='start.png') }}" class="landingPage__startImage" alt="Start Image" />
+                <div class="landingPage__startContent g60 flexColumn">
+                    <div class="flexRow g60">
+                        <div class="stepCard flexColumn">
+                            <div class="stepCard__number flexRow">
+                                01
+                            </div>
+                            <div class="stepCard__icon flexRow">
+                                <i class="fas fa-user-plus stepCardIcon"></i>
+                            </div>
+                            <span class="stepCard__head">Create an account</span>
+                            <span class="stepCard__content">You need to create an account. You can do this by clicking on the Sign up button above.</span>
+                        </div>
+                        <div class="stepCard flexColumn">
+                            <div class="stepCard__number flexRow">
+                                02
+                            </div>
+                            <div class="stepCard__icon flexRow">
+                                <span class="iconify stepCardIcon2" data-icon="ci:checkbox-checked"></span>
+                            </div>
+                            <span class="stepCard__head">Choose a theme</span>
+                            <span class="stepCard__content">There are two ways you can proceed, either upload video, or record.</span>
+                        </div>
+                    </div>
+                    <div class="flexRow g60">
+                        <div class="stepCard flexColumn">
+                            <div class="stepCard__number flexRow">
+                                03
+                            </div>
+                            <div class="stepCard__icon flexRow">
+                                <i class="fas fa-film stepCardIcon"></i>
+                            </div>
+                            <span class="stepCard__head">Upload Video</span>
+                            <span class="stepCard__content">You will have to give us access, and then you have to upload/record the video.</span>
+                        </div>
+                        <div class="stepCard flexColumn">
+                            <div class="stepCard__number flexRow">
+                                04
+                            </div>
+                            <div class="stepCard__icon flexRow">
+                                <i class="fas fa-poll stepCardIcon2"></i>
+                            </div>
+                            <span class="stepCard__head">Final Result</span>
+                            <span class="stepCard__content">You will receive the subtitles, along with a generated audio which will speak for you.</span>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        <div class="landingPage__about flexRow" id="about">
+            <div class="landingPage__aboutContent flexColumn">
+                <span class="aboutTop">We're on a mission</span>
+                <span class="aboutHead">About WLASL Convertor</span>
+                <span class="aboutContent">With the Gen Z going the video way, the future rectruitement is going to be through video resumes. 
+                    It saves the HR people a ton of time in screening profiles. And it makes it more human to  present themseleves than plain texts for the employees.
+                    <br /><br /> With 20+ years on the video production industry, you’re on the right hands. 
+                </span>
+                <div class="landingPage__introCTA flexRow">
+                    <div class="header_Register gSCTA grow1 pointer">
+                        Get Started
+                    </div>
+                    <div class="wDCTA grow1 pointer flexRow">
+                        <i class="far fa-play-circle wDCTA__img"></i>
+                        <span class="wDCTA__text">Watch Demo</span>
+                    </div>
+                </div>
+            </div>
+            <img src="{{ url_for('static', filename='about.jpg') }}" class="landingPage__aboutImage" alt="About Image" />
+        </div>
+        <div class="landingPage__contact flexColumn" id="contact">
+            <span class="contactTop">Let's Talk</span>
+            <span class="contactHead">We're here to help you</span>
+            <div class="contactMainContainer flexRow">
+                <form method="POST" action="">
+
+                </form>
+            </div>
+        </div>
+    </main>
+{% endblock content %}
