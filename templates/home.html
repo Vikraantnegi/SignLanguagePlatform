@@ -103,8 +103,35 @@
             <span class="contactTop">Let's Talk</span>
             <span class="contactHead">We're here to help you</span>
             <div class="contactMainContainer flexRow">
-                <form method="POST" action="">
-
+                <form method="POST" action="" class="flexColumn g40">
+                    {{ form.hidden_tag() }}
+                    <div class="flexRow g60">
+                        <div class="flexColumn form-group formGroup">
+                            {{ form.name.label(class="form-control-label formGroupLabel") }}
+                            {{ form.name(class="form-control form-control-lg formGroupInput") }}
+                        </div>
+                        <div class="flexColumn form-group formGroup">
+                            {{ form.email.label(class="form-control-label formGroupLabel") }}
+                            {{ form.email(class="form-control form-control-lg formGroupInput") }}
+                        </div>
+                    </div>
+                    <div class="flexRow g60">
+                        <div class="flexColumn form-group formGroup">
+                            {{ form.phone.label(class="form-control-label formGroupLabel") }}
+                            {{ form.phone(class="form-control form-control-lg formGroupInput") }}
+                        </div>
+                        <div class="flexColumn form-group formGroup">
+                            {{ form.extra.label(class="form-control-label formGroupLabel") }}
+                            {{ form.extra(class="form-control form-control-lg formGroupInput") }}
+                        </div>
+                    </div>
+                    <div class="flexColumn form-group formGroupTextArea">
+                        {{ form.message.label(class="form-control-label formGroupLabel") }}
+                        {{ form.message(class="form-control form-control-lg formGroupInput") }}
+                    </div>
+                    <div class="submitButton flexRow">
+                        {{ form.submit(class="btn submitButtonForm grow1") }}
+                    </div> 
                 </form>
             </div>
         </div>

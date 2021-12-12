@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, BooleanField
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField
 import phonenumbers
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 
@@ -18,11 +18,11 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Login')
 
 class ContactForm(FlaskForm):
-    name = StringField('Name', validators=[DataRequired(), Length(min=3, max=30)])
-    email = StringField('Your Email', validators=[DataRequired(), Email()])
+    name = StringField('Name *', validators=[DataRequired(), Length(min=3, max=30)])
+    email = StringField('Your Email *', validators=[DataRequired(), Email()])
     phone = StringField('Your Mobile Number', validators=[Length(10)])
     extra = StringField('Education / Profession (optional)', validators=[DataRequired(), Length(min=5, max=60)])
-    message = StringField('Your message', validators=[DataRequired(), Length(min=2, max=200)])
+    message = TextAreaField('Your Message *', validators=[DataRequired(), Length(min=2, max=200)])
     submit = SubmitField('Let’s Talk')
 
     def validate_phone(self, phone):

@@ -291,3 +291,54 @@ h1, h2, h3, h4, h5, h6 {
 .landingPage__startContent{
     margin-right: 4%;
 }
+.formGroup, .formGroupTextArea{
+    background: #F8FBFE;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 8px 20px;
+}
+.formGroupLabel{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #84879E;
+}
+.formGroupInput{
+    border: none !important;
+    background: inherit !important;
+}
+.g40{
+    gap: 40px;
+}
+.formGroup{
+    width: 360px;
+}
+.formGroupTextArea{
+    padding: 12px 20px;
+}
+.submitButton{
+    justify-content: center;
+}
+.submitButtonForm{
+    background: #010D82;
+    box-shadow: 0px 10px 50px rgba(1, 13, 130, 0.12);
+    border-radius: 8px;
+    padding: 16px 40px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+.submitButtonForm:hover{
+    color: #FFFFFF !important;
+}
+.form-control:focus{
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+.form-control{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #010D82;
+    margin-left: -16px;
+}
