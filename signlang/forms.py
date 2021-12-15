@@ -1,6 +1,8 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
+from signlang.models import User
+from signlang import db
 
 class RegistrationForm(FlaskForm):
     name = StringField('Name', validators=[DataRequired(), Length(min=3, max=30)])
@@ -8,6 +10,11 @@ class RegistrationForm(FlaskForm):
     password = PasswordField('New Password', validators=[DataRequired()])
     cnfrm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Register')
+
+    def validate_email(self, email):
+        user = db.session.query(User).filter_by(email=email.data).first()
+        if user:
+            raise ValidationError('Email Id already exists. Try signing in!')
 
 class LoginForm(FlaskForm):
     email = StringField('Your Email', validators=[DataRequired(), Email()])
