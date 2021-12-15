@@ -1,6 +1,10 @@
 {% extends "index.html" %}
 {% block content %}
     <main role="main" class="container">
-        Login
+        <div class="loginComponent">
+            <img src="{{ url_for('static', filename='loginImage.jpg') }}" class="landingPage__loginImage" alt="Login Image" />
+            <div class="loginForm">
+            </div>
+        </div>
     </main>
 {% endblock content %}
