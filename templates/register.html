@@ -4,7 +4,70 @@
         <div class="loginComponent">
             <img src="{{ url_for('static', filename='register.png') }}" class="landingPage__loginImage" alt="Login Image" />
             <div class="registerForm">
-                
+                <form method="POST" action="">
+                    {{ form.hidden_tag() }}
+                    <fieldset class="form-group mb20">
+                        <p class="loginHead mb20">Sign Up</p>
+                        <div class="form-group formGroup mb20">
+                            {{ form.name.label(class="form-control-label formGroupLabel") }}
+                            {% if form.name.errors %}
+                                {{ form.name(class="form-control formGroupInput form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.name.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.name(class="form-control formGroupInput form-control-lg") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group formGroup mb20">
+                            {{ form.email.label(class="form-control-label formGroupLabel") }}
+                            {% if form.email.errors %}
+                                {{ form.email(class="form-control formGroupInput form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.email.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.email(class="form-control formGroupInput form-control-lg") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group formGroup mb10">
+                            {{ form.password.label(class="form-control-label formGroupLabel") }}
+                            {% if form.password.errors %}
+                                {{ form.password(class="form-control formGroupInput form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.password.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.password(class="form-control formGroupInput form-control-lg") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group formGroup mb10">
+                            {{ form.cnfrm_password.label(class="form-control-label formGroupLabel") }}
+                            {% if form.cnfrm_password.errors %}
+                                {{ form.cnfrm_password(class="form-control formGroupInput form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.cnfrm_password.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.cnfrm_password(class="form-control formGroupInput form-control-lg") }}
+                            {% endif %}
+                        </div>
+                        <div class="formCheckLabel mb10">
+                            Already Have An Account? <a class="ml-2" href="/login">Sign In</a>
+                        </div>
+                    </fieldset>
+                    <div class="submitButton flexRow">
+                        {{ form.submit(class="btn grow1 submitButtonForm") }}
+                    </div>
+                </form>
             </div>
         </div>
     </main>
