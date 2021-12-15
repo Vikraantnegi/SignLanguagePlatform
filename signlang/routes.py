@@ -2,7 +2,7 @@ from flask import render_template, url_for, flash, redirect, request
 from signlang import app, db, bcrypt
 from signlang.forms import RegistrationForm, LoginForm, ContactForm
 from signlang.models import User
-from flask_login import login_user, current_user
+from flask_login import login_user, current_user, logout_user, login_required
 
 @app.route("/", methods=['GET','POST'])
 def home():
@@ -35,7 +35,21 @@ def login():
         user = db.session.query(User).filter_by(email = form.email.data).first()
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user, remember=form.remember.data)
-            return redirect(url_for('home'))
+            nextParam = request.args.get('next')
+            if nextParam:
+                return redirect(nextParam)
+            else:
+                return redirect(url_for('home'))
         else:
             flash('Login Unsuccesful. Please check email and password again', 'danger')
     return render_template('login.html', form=form)
+
+@app.route("/logout")
+def logout():
+    logout_user()
+    return redirect(url_for('home'))
+
+@app.route("/product")
+@login_required
+def product():
+    return render_template('product.html')

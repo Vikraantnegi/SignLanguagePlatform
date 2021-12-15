@@ -29,8 +29,12 @@
                             <a class="nav-item nav-link header_normal grow1" href="/#contact">Contact Us</a>
                         </div>
                         <div class="navbar-nav">
-                            <a class="nav-item nav-link header_normal grow1" href="/login">Login</a>
-                            <a class="nav-item nav-link header_Register grow1" href="/register">Register</a>
+                            {% if current_user.is_authenticated %}
+                                <a class="nav-item nav-link header_Register grow1" href="/logout">Logout</a>
+                            {% else %}
+                                <a class="nav-item nav-link header_normal grow1" href="/login">Login</a>
+                                <a class="nav-item nav-link header_Register grow1" href="/register">Register</a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
