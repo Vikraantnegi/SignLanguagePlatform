@@ -4,6 +4,50 @@
         <div class="loginComponent">
             <img src="{{ url_for('static', filename='loginImage.jpg') }}" class="landingPage__loginImage" alt="Login Image" />
             <div class="loginForm">
+                <form method="POST" action="">
+                    {{ form.hidden_tag() }}
+                    <fieldset class="form-group mb20">
+                        <p class="loginHead mb20">Log In</p>
+                        <div class="form-group formGroup mb20">
+                            {{ form.email.label(class="form-control-label formGroupLabel") }}
+                            {% if form.email.errors %}
+                                {{ form.email(class="form-control formGroupInput form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.email.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.email(class="form-control formGroupInput form-control-lg") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group formGroup mb10">
+                            {{ form.password.label(class="form-control-label formGroupLabel") }}
+                            {% if form.password.errors %}
+                                {{ form.password(class="form-control formGroupInput form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.password.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.password(class="form-control formGroupInput form-control-lg") }}
+                            {% endif %}
+                        </div>
+                        <div class="flexRow mb20 loginFormRemember">
+                            <div class="form-check">
+                                {{ form.remember(class="form-check-input") }}
+                                {{ form.remember.label(class="form-check-label formCheckLabel") }}
+                            </div>
+                            <small class="text-muted ml-2 formCheckLabel">
+                                <a href="#">Forgot Password?</a>
+                            </small>
+                        </div>
+                    </fieldset>
+                    <div class="submitButton flexRow">
+                        {{ form.submit(class="btn grow1 submitButtonForm") }}
+                    </div>
+                </form>
             </div>
         </div>
     </main>
