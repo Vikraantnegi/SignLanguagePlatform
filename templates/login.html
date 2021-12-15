@@ -7,7 +7,7 @@
                 <form method="POST" action="">
                     {{ form.hidden_tag() }}
                     <fieldset class="form-group mb20">
-                        <p class="loginHead mb20">Log In</p>
+                        <p class="loginHead mb20">Sign In</p>
                         <div class="form-group formGroup mb20">
                             {{ form.email.label(class="form-control-label formGroupLabel") }}
                             {% if form.email.errors %}
@@ -34,14 +34,17 @@
                                 {{ form.password(class="form-control formGroupInput form-control-lg") }}
                             {% endif %}
                         </div>
-                        <div class="flexRow mb20 loginFormRemember">
+                        <div class="flexRow mb10 loginFormRemember">
                             <div class="form-check">
                                 {{ form.remember(class="form-check-input") }}
                                 {{ form.remember.label(class="form-check-label formCheckLabel") }}
                             </div>
-                            <small class="text-muted ml-2 formCheckLabel">
+                            <small class="ml-2 formCheckLabel">
                                 <a href="#">Forgot Password?</a>
                             </small>
+                        </div>                        
+                        <div class="formCheckLabel mb10">
+                            Need An Account? <a class="ml-2" href="/register">Sign Up Now</a>
                         </div>
                     </fieldset>
                     <div class="submitButton flexRow">
