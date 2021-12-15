@@ -11,9 +11,9 @@ def home():
         return redirect(url_for('home'))     
     return render_template('home.html', form=form)
 
-@app.route("/register")
+@app.route("/register", methods=['GET','POST'])
 def register():
-    form = RegistrationForm()
+    form = RegistrationForm(request.form)
     if form.validate_on_submit():
         hashed_pwd = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
         user = User(name=form.name.data, email=form.email.data, password=hashed_pwd)
