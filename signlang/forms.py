@@ -32,5 +32,5 @@ class ContactForm(FlaskForm):
     submit = SubmitField('Let’s Talk')
 
 class UploadForm(FlaskForm):
-    img = FileField('Upload your Video here', [FileAllowed(['mp4'])])
+    video = FileField('Upload your Video here', [FileAllowed(['mp4'])])
     submit = SubmitField('Lets Go!')

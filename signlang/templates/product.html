@@ -5,21 +5,25 @@
         <img src="{{ url_for('static', filename='output.png') }}" class="landingPage__loginImage" alt="Login Image" />
         <div class="loginForm outputForm">
             <form method="POST" action="">
+                {{form.csrf_token}}
                 <fieldset class="form-group mb20">
                     <p class="loginHead mb20">Upload Video</p>
-                    <div class="formGroupTextArea outputArea flexRow fileInput">
-                        <input type="file" class="fileInputGroup flexColumn" name="file" autocomplete="off" required>
+                    <div class="formGroupTextArea outputArea fileInput flexColumn" style="margin:0">
+                        {{form.video.label(class="form-control-label formGroupLabel mb20")}}
+                        {{form.video(class="form-control-file fileInputGroup")}}
                     </div>
                 </fieldset>
-                <div class="submitButton flexRow mb40">
-                    <input type="submit" value="Upload" class="btn grow1 submitButtonForm" />
+                <div class="submitButton flexRow mb20">
+                    {{ form.submit(class="btn grow1 submitButtonForm") }}
                 </div>
-                <div class="flexColumn mb20">
-                    <span class="outputHead"> Output of the above video: </span>
-                    <div class="outputAns">
-                        Hello
+                {{ % if result % }}
+                    <div class="flexColumn mb20">
+                        <span class="outputHead"> Output of the above video: </span>
+                        <div class="outputAns">
+                            {{ result }}
+                        </div>
                     </div>
-                </div>
+                {% endif %}
             </form>
         </div>
     </div>

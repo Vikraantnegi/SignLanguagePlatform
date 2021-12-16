@@ -51,9 +51,10 @@ def logout():
     logout_user()
     return redirect(url_for('home'))
 
-@app.route("/product", methods=['POST'])
+@app.route("/product", methods=['GET', 'POST'])
 @login_required
 def product():
+    result=""
     form = UploadForm()
     if form.validate_on_submit():
         file = request.files['file']
@@ -61,4 +62,5 @@ def product():
         file.save(os.path.join(app.config['UPLOAD_FOLDER']))
         print('Upload_Video: ', + filename)
         flash('Video successfully uploaded and displayed below')
-    return render_template('product.html', form=form)
+        return render_template('product.html', form=form, result=result)
+    return render_template('product.html', form=form, result=result)
