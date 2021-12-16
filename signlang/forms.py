@@ -1,4 +1,5 @@
 from flask_wtf import FlaskForm
+from flask_wtf.file import FileField, FileAllowed
 from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from signlang.models import User
@@ -29,3 +30,7 @@ class ContactForm(FlaskForm):
     extra = StringField('Education / Profession *', validators=[DataRequired(), Length(min=5, max=60)])
     message = TextAreaField('Your Message *', validators=[DataRequired(), Length(min=2, max=200)])
     submit = SubmitField('Let’s Talk')
+
+class UploadForm(FlaskForm):
+    img = FileField('Upload your Video here', [FileAllowed(['mp4'])])
+    submit = SubmitField('Lets Go!')

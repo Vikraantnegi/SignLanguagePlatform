@@ -1,8 +1,10 @@
+import os
 from flask import render_template, url_for, flash, redirect, request
 from signlang import app, db, bcrypt
-from signlang.forms import RegistrationForm, LoginForm, ContactForm
+from signlang.forms import RegistrationForm, LoginForm, ContactForm, UploadForm
 from signlang.models import User
 from flask_login import login_user, current_user, logout_user, login_required
+from werkzeug.utils import secure_filename
 
 @app.route("/", methods=['GET','POST'])
 def home():
@@ -49,7 +51,14 @@ def logout():
     logout_user()
     return redirect(url_for('home'))
 
-@app.route("/product")
+@app.route("/product", methods=['POST'])
 @login_required
 def product():
-    return render_template('product.html')
+    form = UploadForm()
+    if form.validate_on_submit():
+        file = request.files['file']
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER']))
+        print('Upload_Video: ', + filename)
+        flash('Video successfully uploaded and displayed below')
+    return render_template('product.html', form=form)
