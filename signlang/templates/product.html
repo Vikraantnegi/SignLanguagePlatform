@@ -16,7 +16,7 @@
                 <div class="submitButton flexRow mb20">
                     {{ form.submit(class="btn grow1 submitButtonForm") }}
                 </div>
-                {{ % if result % }}
+                {% if result != '' %}
                     <div class="flexColumn mb20">
                         <span class="outputHead"> Output of the above video: </span>
                         <div class="outputAns">
