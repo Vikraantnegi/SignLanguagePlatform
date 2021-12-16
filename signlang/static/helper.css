@@ -397,3 +397,37 @@ h1, h2, h3, h4, h5, h6 {
     outline: none;
     box-shadow: none 
 }
+.fileInputGroup{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+.fileInput{
+    align-items: center;
+    justify-content: center;
+}
+.outputHead{    
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: #010D82;
+}
+.mb40{
+    margin-bottom: 40px;
+}
+.outputForm{
+    padding: 100px 60px;
+}
+.outputAns{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    color: #010D82;
+}
+.outputArea{    
+    padding: 20px;
+}

@@ -1,3 +1,27 @@
 {% extends "index.html" %}
 {% block content %}
+<main role="main" class="container">
+    <div class="loginComponent">
+        <img src="{{ url_for('static', filename='output.png') }}" class="landingPage__loginImage" alt="Login Image" />
+        <div class="loginForm outputForm">
+            <form method="POST" action="">
+                <fieldset class="form-group mb20">
+                    <p class="loginHead mb20">Upload Video</p>
+                    <div class="formGroupTextArea outputArea flexRow fileInput">
+                        <input type="file" class="fileInputGroup flexColumn" name="file" autocomplete="off" required>
+                    </div>
+                </fieldset>
+                <div class="submitButton flexRow mb40">
+                    <input type="submit" value="Upload" class="btn grow1 submitButtonForm" />
+                </div>
+                <div class="flexColumn mb20">
+                    <span class="outputHead"> Output of the above video: </span>
+                    <div class="outputAns">
+                        Hello
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
 {% endblock content %}
