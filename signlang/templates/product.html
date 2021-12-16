@@ -4,7 +4,7 @@
     <div class="loginComponent">
         <img src="{{ url_for('static', filename='output.png') }}" class="landingPage__loginImage" alt="Login Image" />
         <div class="loginForm outputForm">
-            <form method="POST" action="">
+            <form method="POST" enctype="multipart/form-data">
                 {{form.csrf_token}}
                 <fieldset class="form-group mb20">
                     <p class="loginHead mb20">Upload Video</p>

@@ -1,4 +1,5 @@
 import os
+import secrets
 from tensorflow import keras
 import tensorflow as tf
 from keras.models import load_model
@@ -11,9 +12,8 @@ from signlang import app, db, bcrypt
 from signlang.forms import RegistrationForm, LoginForm, ContactForm, UploadForm
 from signlang.models import User
 from flask_login import login_user, current_user, logout_user, login_required
-from werkzeug.utils import secure_filename
 
-model = load_model("models/SignModel.h5")
+model = load_model(r'F:\Github\SignLanguagePlatform\signlang\models\SignModel.h5')
 
 words=[
     'book', 'drink', 'computer', 'before', 'chair', 'go', 'clothes',
@@ -140,11 +140,19 @@ def product():
     result=""
     form = UploadForm()
     if form.validate_on_submit():
-        file = request.files['file']
-        filename = secure_filename(file.filename)
-        file.save(os.path.join(app.config['UPLOAD_FOLDER']))
-        print('Upload_Video: ', + filename)
-        flash('Video successfully uploaded and displayed below')
-        result = getWord(os.path.join(app.config['UPLOAD_FOLDER'] + filename))
-        return render_template('product.html', form=form, result=result)
+        video = form.video.data
+        if video:
+            if video.filename == '':
+                flash('No selected file', 'danger')
+                return redirect(request.url)
+            else:                
+                random_hex = secrets.token_hex(8)
+                _, f_ext = os.path.splitext(video.filename)
+                video_fn = random_hex + f_ext
+                video.save(os.path.join(app.config['UPLOAD_FOLDER'], video_fn))
+                flash('Successfully Uploaded', 'success')
+                return redirect(request.url)
+        else:
+            flash('No file uploaded', 'danger')
+            return redirect(request.url)
     return render_template('product.html', form=form, result=result)
