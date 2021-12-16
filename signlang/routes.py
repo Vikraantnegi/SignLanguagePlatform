@@ -1,5 +1,6 @@
 import os
 import secrets
+from keras.optimizers import get
 from tensorflow import keras
 import tensorflow as tf
 from keras.models import load_model
@@ -150,8 +151,8 @@ def product():
                 _, f_ext = os.path.splitext(video.filename)
                 video_fn = random_hex + f_ext
                 video.save(os.path.join(app.config['UPLOAD_FOLDER'], video_fn))
-                flash('Successfully Uploaded', 'success')
-                return redirect(request.url)
+                result = getWord(os.path.join(app.config['UPLOAD_FOLDER'], video_fn))
+                flash('Great Success', 'success')
         else:
             flash('No file uploaded', 'danger')
             return redirect(request.url)
