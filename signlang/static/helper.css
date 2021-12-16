@@ -427,3 +427,6 @@ h1, h2, h3, h4, h5, h6 {
 .outputArea{    
     padding: 20px;
 }
+.embed-responsive-item{
+    width: 40%;
+}

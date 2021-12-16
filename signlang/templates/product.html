@@ -2,7 +2,13 @@
 {% block content %}
 <main role="main" class="container">
     <div class="loginComponent">
-        <img src="{{ url_for('static', filename='output.png') }}" class="landingPage__loginImage" alt="Login Image" />
+        {% if video == '' %}
+            <img src="{{ url_for('static', filename='output.png') }}" class="landingPage__loginImage" alt="Login Image" />
+        {% else %}
+            <video width="500" height="500" autoplay>
+                <source src="{{ url_for('static', filename='' + video) }}" type="video/mp4">                
+            </video>
+        {% endif %}
         <div class="loginForm outputForm">
             <form method="POST" enctype="multipart/form-data">
                 {{form.csrf_token}}

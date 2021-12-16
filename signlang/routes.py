@@ -139,6 +139,7 @@ def getWord( path ):
 @login_required
 def product():
     result=""
+    videoPath=""
     form = UploadForm()
     if form.validate_on_submit():
         video = form.video.data
@@ -151,9 +152,10 @@ def product():
                 _, f_ext = os.path.splitext(video.filename)
                 video_fn = random_hex + f_ext
                 video.save(os.path.join(app.config['UPLOAD_FOLDER'], video_fn))
+                videoPath=video_fn
                 result = getWord(os.path.join(app.config['UPLOAD_FOLDER'], video_fn))
                 flash('Great Success', 'success')
         else:
             flash('No file uploaded', 'danger')
             return redirect(request.url)
-    return render_template('product.html', form=form, result=result)
+    return render_template('product.html', form=form, result=result, video=videoPath)

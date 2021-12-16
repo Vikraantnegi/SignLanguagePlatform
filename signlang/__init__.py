@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 
-UPLOAD_FOLDER = r'F:\Github\SignLanguagePlatform\signlang\static\uploads'
+UPLOAD_FOLDER = r'F:\Github\SignLanguagePlatform\signlang\static'
 MODEL_FOLDER = 'models/'
 
 app = Flask(__name__)
